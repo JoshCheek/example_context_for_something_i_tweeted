@@ -1,0 +1,17 @@
+require_relative 'ns'
+
+namespace :ns do
+  desc 'do type one things'
+  task :one do
+    puts NS.custom_type_one
+  end
+
+  desc 'do type two things'
+  task :two do
+    puts NS.custom_type_two
+  end
+end
+
+task :default do
+  sh 'rspec', 'spec.rb', '-c', '-f', 'd'
+end
